@@ -14,8 +14,8 @@ export default function App() {
       <KindeProvider
         clientId="fb3de3eca4cc4c599741dfdd1b5f4649"
         domain="https://imagine.kinde.com"
-        redirectUri="http://localhost:3000"
-        logoutUri="http://localhost:3000"
+        redirectUri="https://photohub.vercel.app/"
+        logoutUri="https://photohub.vercel.app/"
       >
         <Routes>
           <Route path="/" element={<Layout />}>
