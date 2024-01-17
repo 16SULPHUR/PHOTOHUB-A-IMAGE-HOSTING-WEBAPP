@@ -9,7 +9,7 @@ const Layout = () => {
     <>
       <header href="/" className="text-gray-600 body-font bg-white backdrop-blur-lg">
         <div className="container mx-auto flex flex-wrap p-2 flex-row justify-center">
-          <a className="flex title-font font-medium items-center text-gray-900 mb-0">
+          <a href="/" className="flex title-font font-medium items-center text-gray-900 mb-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -29,11 +29,8 @@ const Layout = () => {
              <Link class="mr-5 hover:text-gray-900" to="/upload">
                Upload
              </Link>
-             <Link class="mr-5 hover:text-gray-900" to="/login">
-               login
-             </Link>
-             <Link class="mr-5 hover:text-gray-900" to="/login">
-               login
+             <Link class="mr-5 hover:text-gray-900" to="/myUploads">
+               My Uploads
              </Link>
            </nav>
           ) : (

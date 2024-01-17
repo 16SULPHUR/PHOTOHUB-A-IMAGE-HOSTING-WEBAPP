@@ -23,7 +23,8 @@ function FileUploader() {
 
   const [uppy] = useState(() =>
     new Uppy().use(Webcam).use(XHRUpload, {
-      endpoint: "http://127.0.0.1:3001/upload",
+      // endpoint: "http://127.0.0.1:3001/upload",
+      endpoint: "https://photohub-api.vercel.app/upload",
       formData: true,
       bundle: true,
     })
