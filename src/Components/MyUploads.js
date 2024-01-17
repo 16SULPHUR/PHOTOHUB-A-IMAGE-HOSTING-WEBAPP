@@ -54,13 +54,13 @@ function FileUploader() {
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">My Uploads</h1>
           {/* Render the list of images */}
-          <ul className="grid grid-cols-2 gap-4">
+          <ul className="grid sm:grid-cols-4 grid-cols-2 gap-4 p-20">
             {images.map((image) => (
-              <li key={image.id} className="overflow-hidden rounded-md shadow-md w-40">
+              <li key={image.id} className="overflow-hidden rounded-md shadow-md">
                 <img
                   src={image.image.url}
                   alt={`Image ${image.id}`}
-                  className="w-full h-auto"
+                  className="w-full"
                 />
               </li>
             ))}
