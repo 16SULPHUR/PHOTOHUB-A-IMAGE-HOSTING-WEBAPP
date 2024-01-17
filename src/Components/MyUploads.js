@@ -30,9 +30,10 @@ function FileUploader() {
   const fetchImages = async () => {
     try {
       if (user) {
-
         // const response = await fetch(`http://127.0.0.1:3001/images?userId=${user.id}`);
-        const response = await fetch(`https://photohub-api.vercel.app/images?userId=${user.id}`);
+        const response = await fetch(
+          `https://photohub-api.vercel.app/images?userId=${user.id}`
+        );
         if (response.ok) {
           const imagesData = await response.json();
           console.log(imagesData);
@@ -56,13 +57,19 @@ function FileUploader() {
           {/* Render the list of images */}
           <ul className="grid sm:grid-cols-4 grid-cols-2 gap-4 p-20">
             {images.map((image) => (
-              <li key={image.id} className="overflow-hidden rounded-md shadow-md">
-                <img
-                  src={image.image.url}
-                  alt={`Image ${image.id}`}
-                  className="w-full"
-                />
-              </li>
+              <li
+                  key={image.id}
+                  className="overflow-hidden rounded-md shadow-md"
+                >
+              <a href="image.image.url" download >
+                  <img
+                    src={image.image.url}
+                    alt={`Image ${image.id}`}
+                    className="w-full"
+                    aria-label="Download now" aria-labelledby="Download Now"
+                  />
+              </a>
+                </li>
             ))}
           </ul>
         </div>
