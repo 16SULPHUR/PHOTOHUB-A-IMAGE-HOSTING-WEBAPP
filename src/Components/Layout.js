@@ -1,66 +1,79 @@
 import { Outlet, Link } from "react-router-dom";
+import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
 const Layout = () => {
+  const { user, isAuthenticated, isLoading } = useKindeAuth();
+  const { login, register, logout } = useKindeAuth();
+
   return (
     <>
-      {/* <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/login">login</Link>
-          </li>
-          <li>
-            <Link to="/upload">upload</Link>
-          </li>
-        </ul>
-      </nav> */}
-
-      <header class="text-gray-600 body-font bg-white backdrop-blur-lg">
-        <div class="container mx-auto flex flex-wrap p-2 flex-row justify-center">
-          <a class="flex title-font font-medium items-center text-gray-900 mb-0">
+      <header href="/" className="text-gray-600 body-font bg-white backdrop-blur-lg">
+        <div className="container mx-auto flex flex-wrap p-2 flex-row justify-center">
+          <a className="flex title-font font-medium items-center text-gray-900 mb-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-10 h-10 text-white p-2 bg-red-500 rounded-full"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              className="w-10 h-10 text-white p-2 bg-red-500 rounded-full"
               viewBox="0 0 24 24"
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
-            <span class="ml-3 text-xl text-black">Imagene</span>
+            <span className="ml-3 text-xl text-black">PhotoHub</span>
           </a>
-          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            {/* <Link class="mr-5 hover:text-gray-900" to="/login">
-              login
-            </Link>
-            <Link class="mr-5 hover:text-gray-900" to="/login">
-              login
-            </Link>
-            <Link class="mr-5 hover:text-gray-900" to="/login">
-              login
-            </Link> */}
+          {isAuthenticated ? (
+             <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+             <Link class="mr-5 hover:text-gray-900" to="/upload">
+               Upload
+             </Link>
+             <Link class="mr-5 hover:text-gray-900" to="/login">
+               login
+             </Link>
+             <Link class="mr-5 hover:text-gray-900" to="/login">
+               login
+             </Link>
+           </nav>
+          ) : (
+            <div></div>
+          )}
+
+
+          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            {/* Your navigation links */}
           </nav>
-          {/* <Link class=" hover:text-gray-900 self-center" to="/login">
-            <button class="inline-flex items-center bg-red-600 border-0 py-1 px-3 focus:outline-none hover:bg-red-700 text-white rounded text-base">
-              Button
-              <svg
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                class="w-4 h-4 ml-1"
-                viewBox="0 0 24 24"
+          
+          
+          {isAuthenticated ? (
+            <div>
+              <button
+                className="inline-flex items-center bg-red-600 border-0 py-1 px-3 focus:outline-none hover:bg-red-700 text-white rounded text-base mt-4 md:mt-0"
+                onClick={logout}
+                type="button"
               >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </Link> */}
+                Sign out
+              </button>
+            </div>
+          ) : (
+            <div className="flex gap-7 justify-end">
+              <button
+                className="inline-flex items-center bg-red-600 border-0 py-1 px-3 focus:outline-none hover:bg-red-700 text-white rounded text-base mt-4 md:mt-0"
+                onClick={register}
+                type="button"
+              >
+                Sign up
+              </button>
+              <button
+                className="inline-flex items-center bg-red-600 border-0 py-1 px-3 focus:outline-none hover:bg-red-700 text-white rounded text-base mt-4 md:mt-0"
+                onClick={login}
+                type="button"
+              >
+                Sign in
+              </button>
+            </div>
+          )}
         </div>
       </header>
 

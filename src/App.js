@@ -14,12 +14,15 @@ export default function App() {
       <KindeProvider
         clientId="fb3de3eca4cc4c599741dfdd1b5f4649"
         domain="https://imagine.kinde.com"
-        redirectUri="https://photohub.vercel.app/"
-        logoutUri="https://photohub.vercel.app/"
+        // redirectUri="https://photohub.vercel.app/"
+        // logoutUri="https://photohub.vercel.app/"
+        redirectUri="http://127.0.0.1:3000/"
+        logoutUri="http://127.0.0.1:3000/"
       >
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="home" element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="upload" element={<FileUploader />} />
             <Route path="*" element={<NoPage />} />
