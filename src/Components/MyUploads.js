@@ -32,7 +32,7 @@ function FileUploader() {
       if (user) {
 
         // const response = await fetch(`http://127.0.0.1:3001/images?userId=${user.id}`);
-        const response = await fetch(`https://photohub.vercel.app/images?userId=${user.id}`);
+        const response = await fetch(`https://photohub-api.vercel.app/images?userId=${user.id}`);
         if (response.ok) {
           const imagesData = await response.json();
           console.log(imagesData);
