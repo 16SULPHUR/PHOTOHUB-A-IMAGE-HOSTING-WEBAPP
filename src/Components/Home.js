@@ -5,7 +5,7 @@ function Home() {
   return (
     <div>
       <section class="text-gray-600 body-font">
-        <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+        <div class="container mx-auto flex px-5 py-20 items-center justify-center flex-col">
           <img
             class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded shadow-xl border border-black"
             alt="hero"
