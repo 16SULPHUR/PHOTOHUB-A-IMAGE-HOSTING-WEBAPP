@@ -61,7 +61,7 @@ function FileUploader() {
                   key={image.id}
                   className="overflow-hidden rounded-md shadow-md"
                 >
-              <a href="image.image.url" download >
+              <a href={image.image.url} download >
                   <img
                     src={image.image.url}
                     alt={`Image ${image.id}`}

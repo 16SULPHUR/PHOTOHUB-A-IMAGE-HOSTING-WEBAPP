@@ -9,7 +9,13 @@ import NoPage from "./Components/NoPage";
 
 import { KindeProvider } from "@kinde-oss/kinde-auth-react";
 
+import React, { useEffect } from 'react';
+
+
 export default function App() {
+  useEffect(() => {
+    document.title = 'PhotoHub - Image Hosting';
+  }, []);
   return (
     <BrowserRouter>
       <KindeProvider
