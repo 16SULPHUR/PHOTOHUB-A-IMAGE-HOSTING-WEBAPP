@@ -31,7 +31,7 @@ function FileUploader() {
     })
     // .use(Url, {
     //   target: Dashboard,
-    //   companionUrl: 'https://demos.transloadit.com/',
+    //   companionUrl: 'https://demos.transloadit.com/', 
     // })
   );
 
