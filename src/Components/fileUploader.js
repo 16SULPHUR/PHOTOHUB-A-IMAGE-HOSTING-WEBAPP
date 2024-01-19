@@ -36,7 +36,7 @@ function FileUploader() {
   );
 
   console.log("user")
-  console.log(user)
+  // console.log(user)
 
   
     if(user){
