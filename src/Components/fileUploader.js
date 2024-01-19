@@ -28,10 +28,11 @@ function FileUploader() {
       endpoint: "https://photohub-api.vercel.app/upload",
       formData: true,
       bundle: true,
-    }).use(Url, {
-      target: Dashboard,
-      companionUrl: 'https://photohub.vercel.app',
     })
+    // .use(Url, {
+    //   target: Dashboard,
+    //   companionUrl: 'https://demos.transloadit.com/',
+    // })
   );
 
   console.log("user")
