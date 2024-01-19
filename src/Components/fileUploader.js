@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Uppy from "@uppy/core";
 import Webcam from "@uppy/webcam";
 import XHRUpload from "@uppy/xhr-upload";
+import Url from '@uppy/url';
 import { Dashboard } from "@uppy/react";
 import { useNavigate } from "react-router-dom";
 
